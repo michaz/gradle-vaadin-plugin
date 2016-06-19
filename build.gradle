@@ -25,7 +25,7 @@ plugins {
     id 'groovy'
     id 'maven'
     id 'idea'
-    id 'codenarc'
+//    id 'codenarc'
     id 'com.jfrog.bintray' version '1.6'
     id 'com.gradle.plugin-publish' version '0.9.1'
 }
@@ -241,16 +241,16 @@ check.dependsOn 'integrationTest'
 /**
  * Code formatting configurations with Codenarc
  */
-codenarc{
-    toolVersion = '0.25.1'
-    configFile = project.file('config/codenarc/ruleset.groovy')
-    maxPriority1Violations = 0
-    maxPriority2Violations = 0
-    maxPriority3Violations = 1300
-    codenarcTest {
-        configFile = project.file('config/codenarc/ruleset-test.groovy')
-    }
-}
+//codenarc{
+//    toolVersion = '0.25.1'
+//    configFile = project.file('config/codenarc/ruleset.groovy')
+//    maxPriority1Violations = 0
+//    maxPriority2Violations = 0
+//    maxPriority3Violations = 1300
+//    codenarcTest {
+//        configFile = project.file('config/codenarc/ruleset-test.groovy')
+//    }
+//}
 
 /***********************************************************************************************************************
  *

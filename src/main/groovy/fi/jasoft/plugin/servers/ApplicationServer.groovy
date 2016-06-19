@@ -167,7 +167,10 @@ abstract class ApplicationServer {
             classesDir = project.file(project.vaadinRun.classesDir)
         }
 
-        appServerProcess.add(classesDir.canonicalPath + File.separator)
+        appServerProcess.add(
+                project.sourceSets.main.output.classesDir.canonicalPath
+                + ","
+                + project.sourceSets.main.output.resourcesDir.canonicalPath)
 
         if(project.logger.debugEnabled){
             appServerProcess.add('DEBUG')
