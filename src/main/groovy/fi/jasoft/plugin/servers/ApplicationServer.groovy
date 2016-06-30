@@ -161,13 +161,16 @@ abstract class ApplicationServer {
 
         appServerProcess.add(webAppDir.canonicalPath + File.separator)
 
-        File classesDir = project.sourceSets.main.output.classesDir
-        if(project.vaadinRun.classesDir){
-            // Eclipse might output somewhere else
-            classesDir = project.file(project.vaadinRun.classesDir)
-        }
+//        File classesDir = project.sourceSets.main.output.classesDir
+//        if(project.vaadinRun.classesDir){
+//            // Eclipse might output somewhere else
+//            classesDir = project.file(project.vaadinRun.classesDir)
+//        }
 
         appServerProcess.add(classesDir.canonicalPath + File.separator)
+        appServerProcess.add(project.sourceSets.main.output.classesDir.canonicalPath
+                + ","
+                + project.sourceSets.main.output.resourcesDir.canonicalPath)
 
         if(project.logger.debugEnabled){
             appServerProcess.add('DEBUG')
